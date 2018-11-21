@@ -27,35 +27,39 @@ public class CircleChartView extends View {
     private float innerProgress = 0;//内部弧初始角度
     private int height; //控件高度
     private int width; //控件宽度
-    private float circleWidth;
     private int backColor;
     private int outCircleColor;
     private int centerCircleColor;
     private int innerCircleColor;
+    private Context context;
+    private float mWidth;
 
     public CircleChartView(Context context) {
         this(context, null);
+        this.context = context;
     }
 
     public CircleChartView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
+        this.context = context;
     }
 
     public CircleChartView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        TypedArray typedArray  = context.obtainStyledAttributes(attrs, R.styleable.CircleChartView);
-        circleWidth = typedArray.getDimension(R.styleable.CircleChartView_circle_width, 30);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.CircleChartView);
         backColor = typedArray.getColor(R.styleable.CircleChartView_back_circle_color, Color.parseColor("#d8dfe6"));
-        outCircleColor = typedArray.getColor(R.styleable.CircleChartView_out_circle_color, Color.parseColor("#66ffef5c"));
+        outCircleColor = typedArray.getColor(R.styleable.CircleChartView_out_circle_color, Color.parseColor("#ffef5c"));
         centerCircleColor = typedArray.getColor(R.styleable.CircleChartView_center_circle_color, Color.parseColor("#4ec288"));
         innerCircleColor = typedArray.getColor(R.styleable.CircleChartView_inner_circle_color, Color.parseColor("#638fff"));
         typedArray.recycle();
+        this.context = context;
+        mWidth = Utils.dpToPixel(10);
         init();
     }
 
     private void init() {
 
-        float strokeWidth = CircleChartUtil.dpToPx(circleWidth);
+        float strokeWidth = Utils.dpToPixel(10);
 
         backPaint = new Paint();
         backPaint.setAntiAlias(true);
@@ -67,7 +71,7 @@ public class CircleChartView extends View {
         linePaint = new Paint();
         linePaint.setAntiAlias(true);
         linePaint.setColor(backColor);
-        linePaint.setStrokeWidth(4);
+        linePaint.setStrokeWidth(Utils.dpToPixel(1));
         linePaint.setStrokeCap(Paint.Cap.ROUND);
 
         circlePaint = new Paint();
@@ -111,43 +115,46 @@ public class CircleChartView extends View {
 
     /**
      * 灰色背景圆的绘制
+     *
      * @param canvas
      */
     private void drawGrayCircle(Canvas canvas) {
-        canvas.drawCircle(width / 2, height / 2,radius -20,backPaint);
-        canvas.drawCircle(width / 2, height / 2,(radius -20)/3*2,backPaint);
-        canvas.drawCircle(width / 2, height / 2,(radius -20)/3,backPaint);
+        canvas.drawCircle(width / 2, height / 2, radius - mWidth, backPaint);
+        canvas.drawCircle(width / 2, height / 2, (radius - mWidth) / 3 * 2, backPaint);
+        canvas.drawCircle(width / 2, height / 2, (radius - mWidth) / 3, backPaint);
     }
 
     /**
      * 圆弧的绘制
+     *
      * @param canvas
      */
     private void drawArc(Canvas canvas) {
         RectF rectF = new RectF();
-        rectF.set(radius - (radius-20)/3*2,radius - (radius-20)/3*2,radius +(radius-20)/3*2,radius +(radius-20)/3*2);
-        canvas.drawArc(rectF,-90,centerProgress,false,arcPaint);
+        rectF.set(radius - (radius - mWidth) / 3 * 2, radius - (radius - mWidth) / 3 * 2, radius + (radius - mWidth) / 3 * 2, radius + (radius - mWidth) / 3 * 2);
+        canvas.drawArc(rectF, -90, centerProgress, false, arcPaint);
 
         RectF rectF1 = new RectF();
-        rectF1.set(radius - (radius-20)/3,radius - (radius-20)/3,radius +(radius-20)/3,radius +(radius-20)/3);
-        canvas.drawArc(rectF1,-90,innerProgress,false,inArcPaint);
+        rectF1.set(radius - (radius - mWidth) / 3, radius - (radius - mWidth) / 3, radius + (radius - mWidth) / 3, radius + (radius - mWidth) / 3);
+        canvas.drawArc(rectF1, -90, innerProgress, false, inArcPaint);
     }
 
     private void drawCircle(Canvas canvas) {
         RectF rectF1 = new RectF();
-        rectF1.set(radius-(radius-20),radius-(radius-20),radius +(radius-20),radius +(radius-20));
-        canvas.drawArc(rectF1,-90,outProgress,false,circlePaint);
+        rectF1.set(radius - (radius - mWidth), radius - (radius - mWidth), radius + (radius - mWidth), radius + (radius - mWidth));
+        canvas.drawArc(rectF1, -90, outProgress, false, circlePaint);
     }
 
     /**
      * 放射线绘制
+     *
      * @param canvas
      */
     private void drawLine(Canvas canvas) {
         canvas.drawLine(width / 2, height / 2, width / 2, 0, linePaint);
         for (int i = 1; i < 10; i++) {
             canvas.save();
-            canvas.rotate(36*i,width / 2, height / 2);
+            canvas.rotate(36 * i, width / 2, height / 2);
             canvas.drawLine(width / 2, height / 2, width / 2, 0, linePaint);
             canvas.restore();
         }

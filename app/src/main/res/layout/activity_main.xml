@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.gagobigdata.myview.ScanableImageView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,102 +8,30 @@
     tools:context="com.gagobigdata.myview.MainActivity">
 
 
-    <!--<com.gagobigdata.myview.CircleChartView-->
-        <!--android:id="@+id/chart_view"-->
-        <!--android:layout_width="250dp"-->
-        <!--android:layout_height="250dp"-->
-        <!--app:circle_width="14dp"-->
-        <!--android:visibility="gone"-->
-        <!--/>-->
+    <com.gagobigdata.myview.CircleChartView
+        android:id="@+id/chart_view"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:circle_width="14dp" />
 
 
-    <!---->
-    <!--<com.gagobigdata.myview.WeekWeatherView-->
-        <!--android:id="@+id/weekView"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="175dp"-->
-        <!--android:visibility="gone"/>-->
+    <com.gagobigdata.myview.WeekWeatherView
+        android:id="@+id/weekView"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:visibility="gone" />
 
-    <!--<com.gagobigdata.myview.HoursWeatherView-->
-    <!--android:id="@+id/hour_view"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-        <!--android:visibility="gone"/>-->
-
+    <com.gagobigdata.myview.HoursWeatherView
+        android:id="@+id/hour_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
 
 
-    <!--<com.gagobigdata.myview.DayWeatherView-->
-        <!--android:id="@+id/day"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="180dp"-->
-        <!--android:visibility="gone">-->
-    <!--</com.gagobigdata.myview.DayWeatherView>-->
+    <com.gagobigdata.myview.DayWeatherView
+        android:id="@+id/day"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:visibility="gone"/>
 
-
-    <!--<com.gagobigdata.myview.PathFillView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent" />-->
-
-    <!--<com.gagobigdata.myview.ThreeDRotateView-->
-        <!--android:id="@+id/view"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent" />-->
-
-    <!--<ImageView-->
-        <!--android:id="@+id/imageView"-->
-        <!--android:layout_width="50dp"-->
-        <!--android:layout_height="50dp"-->
-        <!--android:layout_marginLeft="20dp"-->
-        <!--android:background="@mipmap/rabiit"/>-->
-
-    <!--<com.gagobigdata.myview.ImageTextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent" />-->
-
-    <!--<com.gagobigdata.myview.CustomEditText-->
-        <!--android:id="@+id/editText"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:hint="用户名"/>-->
-
-    <!--<com.gagobigdata.myview.TestView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent" />-->
-
-    <!--<com.gagobigdata.myview.TagLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="1234"/>-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="12347879878979"/>-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="1234987987987987"/>-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="12349898"/>-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="1234000"/>-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="1234"/>-->
-
-    <!--</com.gagobigdata.myview.TagLayout>-->
-    <!---->
-</com.gagobigdata.myview.ScanableImageView>
+</RelativeLayout>
