@@ -16,7 +16,7 @@ view.setData(temp, water);
 
 效果图
 
-![1111](/Users/nsw/Desktop/1111.png)
+![1111](https://github.com/liliangxin/CustomView／scerrnshot／1111.png)
 
 ### WeekWeatherView
 
@@ -34,7 +34,7 @@ view.invalidate();
 
 效果图
 
-![2222](/Users/nsw/Desktop/2222.png)
+![2222](https://github.com/liliangxin/CustomView／scerrnshot／2222.png)
 
 ### CircleChatView
 
@@ -49,6 +49,6 @@ CircleChartUtil.startAnimotor(chartView,3000,250,290,150);
 
 效果图
 
-![3333](/Users/nsw/Desktop/3333.png)
+![3333](https://github.com/liliangxin/CustomView／scerrnshot／3333.png)
 
 以上自定义View均为自己项目中使用的View，暂未考虑兼容问题，如果想要在你自己的项目中使用的话，请修改代码。
