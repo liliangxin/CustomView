@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+    <declare-styleable name="MNCalendar">
+        &lt;!&ndash;日历是否显示阴历 : true-显示,false-不显示 (默认显示)&ndash;&gt;
+        <attr name="mnCalendar_showLunar" format="boolean" />
+        &lt;!&ndash;日历是否显示星期一栏 : true-显示,false-不显示 (默认显示) &ndash;&gt;
+        <attr name="mnCalendar_showWeek" format="boolean" />
+        &lt;!&ndash;日历星期的颜色值&ndash;&gt;
+        <attr name="mnCalendar_colorWeek" format="color" />
+        &lt;!&ndash;日历Item的阳历的颜色值&ndash;&gt;
+        <attr name="mnCalendar_colorSolar" format="color" />
+        &lt;!&ndash;日历Item的阴历的颜色值&ndash;&gt;
+        <attr name="mnCalendar_colorLunar" format="color" />
+        &lt;!&ndash;日历今天圆形背景&ndash;&gt;
+        <attr name="mnCalendar_colorTodayBg" format="color" />
+        &lt;!&ndash;日历不是当前月份的阳历的颜色&ndash;&gt;
+        <attr name="mnCalendar_colorOtherMonth" format="color" />
+        &lt;!&ndash;日历今天圆形背景上的文字的颜色&ndash;&gt;
+        <attr name="mnCalendar_colorTodayText" format="color" />
+    </declare-styleable>
+    -->
+
+    <declare-styleable name="CircleChartView">
+        <attr name="circle_width" format="dimension"/>
+        <attr name="back_circle_color" format="color"/>
+        <attr name="out_circle_color" format="color"/>
+        <attr name="center_circle_color" format="color"/>
+        <attr name="inner_circle_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="MaterialEditText">
+        <attr name="useFloatingLabel" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="FlowLayout">
+        <attr name="flFlow" format="boolean"/>
+        <attr name="flChildSpacing" format="enum|dimension">
+            <enum name="auto" value="-65536"/>
+        </attr>
+        <attr name="flMinChildSpacing" format="dimension"/>
+        <attr name="flChildSpacingForLastRow" format="enum|dimension">
+            <enum name="auto" value="-65536"/>
+            <enum name="align" value="-65537"/>
+        </attr>
+        <attr name="flRowSpacing" format="enum|dimension">
+            <enum name="auto" value="-65536"/>
+        </attr>
+        <attr name="flRtl" format="boolean"/>
+        <attr name="flMaxRows" format="integer"/>
+        <attr name="flRowVerticalGravity" format="enum">
+            <enum name="auto" value="-65536"/>
+            <enum name="top" value="0x30"/>
+            <enum name="center" value="0x10"/>
+            <enum name="bottom" value="0x50"/>
+        </attr>
+        <attr name="android:gravity"/>
+    </declare-styleable>
+
+</resources>
