@@ -17,7 +17,7 @@ view.setData(temp, water);
 效果图
 
 ![1111](scerrnshot/1111.png)
-
+=======
 ### WeekWeatherView
 
 一周天气曲线图
@@ -35,7 +35,7 @@ view.invalidate();
 效果图
 
 ![2222](scerrnshot/2222.png)
-
+=======
 ### CircleChatView
 
 圆形进度的统计图
@@ -50,5 +50,5 @@ CircleChartUtil.startAnimotor(chartView,3000,250,290,150);
 效果图
 
 ![3333](scerrnshot/3333.png)
-
+=======
 以上自定义View均为自己项目中使用的View，暂未考虑兼容问题，如果想要在你自己的项目中使用的话，请修改代码。
