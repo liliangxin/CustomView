@@ -16,7 +16,7 @@ view.setData(temp, water);
 
 效果图
 
-![1111](https://github.com/liliangxin/CustomView／scerrnshot／1111.png)
+![1111](https://github.com/liliangxin/CustomView/blob/master/scerrnshot/1111.png)
 
 ### WeekWeatherView
 
