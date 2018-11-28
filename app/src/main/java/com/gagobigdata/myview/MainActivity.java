@@ -3,13 +3,39 @@ package com.gagobigdata.myview;
 import android.app.Activity;
 import android.os.Bundle;
 
+import com.gagobigdata.myview.segment.SegmentedControlItem;
+import com.gagobigdata.myview.segment.SegmentedControlView;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
 public class MainActivity extends Activity {
 
+    SegmentedControlView segmentedControlView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        segmentedControlView = findViewById(R.id.segmentedControlView);
+        List<SegmentedControlItem> items = new ArrayList<>();
+        items.add(new SegmentedControlItem("Yesterday"));
+        items.add(new SegmentedControlItem("Today"));
+        items.add(new SegmentedControlItem("Tomorrow"));
+
+        segmentedControlView.addItems(items);
+
+        segmentedControlView.setOnSegItemClickListener(new SegmentedControlView.OnSegItemClickListener() {
+            @Override
+            public void onItemClick(SegmentedControlItem item, int position) {
+                String msg = String.format(Locale.getDefault(), "selected:%d", position);
+
+            }
+        });
+
 //        float shakeLength = Utils.dpToPixel(3);
 //        imageView = findViewById(R.id.imageView);
 //        Keyframe keyframe1 = Keyframe.ofFloat(0f, 0f);
@@ -52,7 +78,7 @@ public class MainActivity extends Activity {
 //        view.invalidate();
 
 
-        CircleChartView chartView = findViewById(R.id.chart_view);
-        CircleChartUtil.startAnimotor(chartView, 3000, 250, 290, 150);
+//        CircleChartView chartView = findViewById(R.id.chart_view);
+//        CircleChartUtil.startAnimotor(chartView, 3000, 250, 290, 150);
     }
 }

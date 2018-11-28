@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.gagobigdata.myview.MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
 
     <com.gagobigdata.myview.CircleChartView
         android:id="@+id/chart_view"
         android:layout_width="250dp"
         android:layout_height="250dp"
+        android:visibility="gone"
         app:circle_width="14dp" />
 
 
@@ -32,6 +31,16 @@
         android:id="@+id/day"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:visibility="gone"/>
+        android:visibility="gone" />
+
+    <com.gagobigdata.myview.segment.SegmentedControlView
+        android:id="@+id/segmentedControlView"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        app:segMarginLeft="0dp"
+        app:segMarginTop="0dp"
+        app:segMode="CIRCLE"
+        app:segSelectedItem="0"
+        app:segTextSize="14sp" />
 
 </RelativeLayout>

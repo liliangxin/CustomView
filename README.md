@@ -51,4 +51,42 @@ CircleChartUtil.startAnimotor(chartView,3000,250,290,150);
 
 ![3333](scerrnshot/3333.png)
 =======
+### SegmentedControlView
+
+使用
+
+```xml
+<com.gagobigdata.myview.segment.SegmentedControlView
+    android:id="@+id/segmentedControlView"
+    android:layout_width="300dp"
+    android:layout_height="40dp"
+    app:segMarginLeft="0dp"
+    app:segMarginTop="0dp"
+    app:segMode="CIRCLE"
+    app:segSelectedItem="0"
+    app:segTextSize="14sp" />
+```
+
+```java
+segmentedControlView = findViewById(R.id.segmentedControlView);
+List<SegmentedControlItem> items = new ArrayList<>();
+items.add(new SegmentedControlItem("Yesterday"));
+items.add(new SegmentedControlItem("Today"));
+items.add(new SegmentedControlItem("Tomorrow"));
+
+segmentedControlView.addItems(items);
+
+segmentedControlView.setOnSegItemClickListener(new SegmentedControlView.OnSegItemClickListener() {
+    @Override
+    public void onItemClick(SegmentedControlItem item, int position) {
+        String msg = String.format(Locale.getDefault(), "selected:%d", position);
+
+    }
+});
+```
+
+效果图
+
+![WX20181128-112253@2x](scerrnshot/WX20181128-112253@2x.png)
+
 以上自定义View均为自己项目中使用的View，暂未考虑兼容问题，如果想要在你自己的项目中使用的话，请修改代码。

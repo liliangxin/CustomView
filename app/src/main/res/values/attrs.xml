@@ -58,4 +58,41 @@
         <attr name="android:gravity"/>
     </declare-styleable>
 
+    <declare-styleable name="ComponentCustomAttrs">
+        <attr name="custom_theme_color" format="color"/>
+        <attr name="custom_theme_start_color" format="color"/>
+        <attr name="custom_theme_end_color" format="color"/>
+
+        <attr name="custom_normal_background_color" format="color"/>
+        <attr name="custom_disable_background_color" format="color"/>
+
+        <attr name="custom_theme_text_color" format="color"/>
+        <attr name="custom_normal_text_color" format="color"/>
+        <attr name="custom_disable_text_color" format="color"/>
+        <attr name="custom_hint_text_color" format="color"/>
+
+        <attr name="custom_hint_background_color" format="color"/>
+        <attr name="custom_radius" format="dimension"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="SegmentedControlView">
+        <attr name="segRadius" format="dimension|reference" />
+        <attr name="segOuterColor" format="color" />
+        <attr name="segItemColor" format="color" />
+        <attr name="segTextColor" format="color" />
+        <attr name="segShaderStartColor" format="color" />
+        <attr name="segShaderEndColor" format="color" />
+        <attr name="segSelectedTextColor" format="color" />
+        <attr name="segMarginLeft" format="dimension|reference"/>
+        <attr name="segMarginTop" format="dimension|reference"/>
+        <attr name="segSelectedItem" format="integer"/>
+        <attr name="segTextSize" format="dimension|reference"/>
+        <attr name="segScrollEnable" format="boolean"/>
+        <attr name="segMode">
+            <enum name="ROUND" value="0"/>
+            <enum name="CIRCLE" value="1"/>
+        </attr>
+    </declare-styleable>
+
 </resources>

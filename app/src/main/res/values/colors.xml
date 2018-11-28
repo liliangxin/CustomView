@@ -24,4 +24,19 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!--主题色-->
+    <color name="custom_theme_color">#db3c27</color>
+    <color name="custom_theme_start_color">#ff822e</color>
+    <color name="custom_theme_end_color">#e6293c</color>
+
+    <color name="custom_normal_background_color">#fffffff0</color>
+    <color name="custom_disable_background_color">#f2f2f2</color>
+
+    <color name="custom_theme_text_color">#fffffff0</color>
+    <color name="custom_normal_text_color">#212121</color>
+    <color name="custom_disable_text_color">#6e212121</color>
+    <color name="custom_hint_text_color">#6e212121</color>
+
+
 </resources>
