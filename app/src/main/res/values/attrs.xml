@@ -95,4 +95,9 @@
         </attr>
     </declare-styleable>
 
+    <declare-styleable name="CircularProgressView">
+        <attr name="cpv_color" format="color"/>
+        <attr name="cpv_thickness" format="dimension"/>
+    </declare-styleable>
+
 </resources>

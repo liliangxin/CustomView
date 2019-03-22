@@ -5,42 +5,66 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
+    <com.gagobigdata.myview.CircularProgressView
+        android:id="@+id/ProgressView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:cpv_thickness="4dp"/>
 
-    <com.gagobigdata.myview.CircleChartView
-        android:id="@+id/chart_view"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:visibility="gone"
-        app:circle_width="14dp" />
-
-
-    <com.gagobigdata.myview.WeekWeatherView
-        android:id="@+id/weekView"
-        android:layout_width="match_parent"
-        android:layout_height="175dp"
-        android:visibility="gone" />
-
-    <com.gagobigdata.myview.HoursWeatherView
-        android:id="@+id/hour_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone" />
+    <com.gagobigdata.myview.CircleLoadingView
+        android:layout_below="@+id/ProgressView"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
 
 
-    <com.gagobigdata.myview.DayWeatherView
-        android:id="@+id/day"
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:visibility="gone" />
+    <!--<TextView-->
+        <!--android:id="@+id/tv"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="测试"-->
+        <!--android:gravity="center"/>-->
 
-    <com.gagobigdata.myview.segment.SegmentedControlView
-        android:id="@+id/segmentedControlView"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        app:segMarginLeft="0dp"
-        app:segMarginTop="0dp"
-        app:segMode="CIRCLE"
-        app:segSelectedItem="0"
-        app:segTextSize="14sp" />
+    <!--<include layout="@layout/layout_merge"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/tv"/>-->
+
+
+    <!--<com.gagobigdata.myview.CircleChartView-->
+        <!--android:id="@+id/chart_view"-->
+        <!--android:layout_width="250dp"-->
+        <!--android:layout_height="250dp"-->
+        <!--android:visibility="gone"-->
+        <!--app:circle_width="14dp" />-->
+
+
+    <!--<com.gagobigdata.myview.WeekWeatherView-->
+        <!--android:id="@+id/weekView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="175dp"-->
+        <!--android:visibility="gone" />-->
+
+    <!--<com.gagobigdata.myview.HoursWeatherView-->
+        <!--android:id="@+id/hour_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:visibility="gone" />-->
+
+
+    <!--<com.gagobigdata.myview.DayWeatherView-->
+        <!--android:id="@+id/day"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="180dp"-->
+        <!--android:visibility="gone" />-->
+
+    <!--<com.gagobigdata.myview.segment.SegmentedControlView-->
+        <!--android:id="@+id/segmentedControlView"-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--app:segMarginLeft="0dp"-->
+        <!--app:segMarginTop="0dp"-->
+        <!--app:segMode="CIRCLE"-->
+        <!--app:segSelectedItem="0"-->
+        <!--app:segTextSize="14sp" />-->
 
 </RelativeLayout>

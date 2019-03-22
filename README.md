@@ -89,4 +89,22 @@ segmentedControlView.setOnSegItemClickListener(new SegmentedControlView.OnSegIte
 
 ![WX20181128-112253@2x](scerrnshot/WX20181128-112253@2x.png)
 
+### CircularProgressView 
+
+简单的Material Design风格的加载等待动画
+
+使用
+
+```xml
+<com.gagobigdata.myview.CircularProgressView
+    android:id="@+id/ProgressView"
+    android:layout_width="80dp"
+    android:layout_height="80dp"
+    app:cpv_thickness="4dp"/>
+```
+
+效果图
+
+![WX20190322-141954](./scerrnshot/WX20190322-141954.png)
+
 以上自定义View均为自己项目中使用的View，暂未考虑兼容问题，如果想要在你自己的项目中使用的话，请修改代码。
