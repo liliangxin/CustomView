@@ -1,7 +1,14 @@
 package com.gagobigdata.myview;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ProgressBar;
 
 import com.gagobigdata.myview.segment.SegmentedControlItem;
 import com.gagobigdata.myview.segment.SegmentedControlView;
@@ -13,28 +20,44 @@ import java.util.Locale;
 public class MainActivity extends Activity {
 
     SegmentedControlView segmentedControlView;
-
+    CircleProgressBar progressBar;
+    @SuppressLint("HandlerLeak")
+    Handler  handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            progressBar.setProgress(80);
+            progressBar.startAnim();
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        progressBar = findViewById(R.id.circleProgressBar);
+        progressBar.setProgress(27);
+        progressBar.startAnim();
 
 
-        segmentedControlView = findViewById(R.id.segmentedControlView);
-        List<SegmentedControlItem> items = new ArrayList<>();
-        items.add(new SegmentedControlItem("Yesterday"));
-        items.add(new SegmentedControlItem("Today"));
-        items.add(new SegmentedControlItem("Tomorrow"));
 
-        segmentedControlView.addItems(items);
+        handler.sendEmptyMessageDelayed(1,4000);
 
-        segmentedControlView.setOnSegItemClickListener(new SegmentedControlView.OnSegItemClickListener() {
-            @Override
-            public void onItemClick(SegmentedControlItem item, int position) {
-                String msg = String.format(Locale.getDefault(), "selected:%d", position);
 
-            }
-        });
+//        segmentedControlView = findViewById(R.id.segmentedControlView);
+//        List<SegmentedControlItem> items = new ArrayList<>();
+//        items.add(new SegmentedControlItem("Yesterday"));
+//        items.add(new SegmentedControlItem("Today"));
+//        items.add(new SegmentedControlItem("Tomorrow"));
+//
+//        segmentedControlView.addItems(items);
+//
+//        segmentedControlView.setOnSegItemClickListener(new SegmentedControlView.OnSegItemClickListener() {
+//            @Override
+//            public void onItemClick(SegmentedControlItem item, int position) {
+//                String msg = String.format(Locale.getDefault(), "selected:%d", position);
+//
+//            }
+//        });
 
 //        float shakeLength = Utils.dpToPixel(3);
 //        imageView = findViewById(R.id.imageView);

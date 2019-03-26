@@ -100,4 +100,19 @@
         <attr name="cpv_thickness" format="dimension"/>
     </declare-styleable>
 
+    <declare-styleable name="CircleProgressBar">
+        <attr name="circleProgressBarTextColor" format="color"/>
+        <attr name="circleProgressBarProgressColor" format="color"/>
+        <attr name="circleProgressBarThickness" format="dimension"/>
+        <attr name="circleProgressBarTextSize" format="dimension"/>
+        <attr name="circleProgressBarShowText" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="HorizontalLoadingView">
+        <attr name="horizontalLoadingViewLineWidth" format="dimension"/>
+        <attr name="horizontalLoadingViewBackgroundColor" format="color"/>
+        <attr name="horizontalLoadingViewSliderColor" format="color"/>
+        <attr name="horizontalLoadingViewSliderWidth" format="dimension"/>
+    </declare-styleable>
+
 </resources>
