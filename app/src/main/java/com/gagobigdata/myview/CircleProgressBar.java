@@ -24,6 +24,7 @@ public class CircleProgressBar extends View {
     private int mSize;
 
     private int mProgress;// 0 - 100
+    private int mOldProgress;
     private float mThickness;
     private float mTextSize;
     private int mProgressColor;
@@ -112,6 +113,7 @@ public class CircleProgressBar extends View {
         if (progress < 0 || progress > 100) {
             this.mProgress = 100;
         } else {
+            mOldProgress = mProgress;
             this.mProgress = progress;
         }
         invalidate();
@@ -123,7 +125,7 @@ public class CircleProgressBar extends View {
     }
 
     private ObjectAnimator getProgressAnimator() {
-        mProgressAnimator = ObjectAnimator.ofInt(this, "progress", 0, mProgress);
+        mProgressAnimator = ObjectAnimator.ofInt(this, "progress", mOldProgress, mProgress);
         mProgressAnimator.setInterpolator(new LinearInterpolator());
         mProgressAnimator.setDuration(1500);
         return mProgressAnimator;

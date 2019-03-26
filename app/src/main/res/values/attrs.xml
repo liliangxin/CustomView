@@ -95,9 +95,9 @@
         </attr>
     </declare-styleable>
 
-    <declare-styleable name="CircularProgressView">
-        <attr name="cpv_color" format="color"/>
-        <attr name="cpv_thickness" format="dimension"/>
+    <declare-styleable name="CustomCircleLoadingView">
+        <attr name="circleLoadingView_color" format="color"/>
+        <attr name="circleLoadingView_thickness" format="dimension"/>
     </declare-styleable>
 
     <declare-styleable name="CircleProgressBar">

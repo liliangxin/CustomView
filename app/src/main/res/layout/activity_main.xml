@@ -16,19 +16,24 @@
         app:circleProgressBarTextColor="#FF0000"
         app:circleProgressBarShowText="true"/>
 
-    <!--<com.gagobigdata.myview.HorizontalLoadingView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="30dp"-->
-        <!--app:horizontalLoadingViewLineWidth="10dp"-->
-        <!--app:horizontalLoadingViewSliderWidth="100dp"-->
-        <!--app:horizontalLoadingViewSliderColor="#FF0000"-->
-        <!--app:horizontalLoadingViewBackgroundColor="#2196F3"/>-->
+    <com.gagobigdata.myview.HorizontalLoadingView
+        android:id="@+id/HorizontalLoadingView"
+        android:layout_below="@+id/circleProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:horizontalLoadingViewLineWidth="10dp"
+        app:horizontalLoadingViewSliderWidth="100dp"
+        app:horizontalLoadingViewSliderColor="#FF0000"
+        app:horizontalLoadingViewBackgroundColor="#2196F3"/>
 
-    <!--<com.gagobigdata.myview.CircularProgressView-->
-        <!--android:id="@+id/ProgressView"-->
-        <!--android:layout_width="80dp"-->
-        <!--android:layout_height="80dp"-->
-        <!--app:cpv_thickness="4dp"/>-->
+    <com.gagobigdata.myview.CustomCircleLoadingView
+        android:layout_below="@+id/HorizontalLoadingView"
+        android:id="@+id/ProgressView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:circleLoadingView_thickness="4dp"/>
 
     <!--<com.gagobigdata.myview.CircleLoadingView-->
         <!--android:layout_below="@+id/ProgressView"-->

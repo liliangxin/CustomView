@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            progressBar.setProgress(80);
+            progressBar.setProgress(50);
             progressBar.startAnim();
         }
     };

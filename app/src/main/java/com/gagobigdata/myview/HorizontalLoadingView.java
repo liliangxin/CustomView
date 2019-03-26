@@ -9,6 +9,10 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.graphics.Xfermode;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -29,6 +33,7 @@ public class HorizontalLoadingView extends View {
     private float mSliderWidth;
     private int mBackgroundColor;
     private int mSliderColor;
+    private Xfermode mXfermode;
 
     public HorizontalLoadingView(Context context) {
         super(context);
@@ -61,6 +66,8 @@ public class HorizontalLoadingView extends View {
         mSliderPaint.setStrokeWidth(mLineWidth);
         mSliderPaint.setColor(mSliderColor);
         mSliderPaint.setStrokeCap(Paint.Cap.ROUND);
+        mXfermode = new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP);
+
     }
 
     @Override
@@ -71,10 +78,24 @@ public class HorizontalLoadingView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        int paddingLeft = getPaddingLeft();
+        int paddingRight = getPaddingRight();
         int width = getMeasuredWidth();
         int height = getMeasuredHeight();
-        canvas.drawLine(mLineWidth / 2, height / 2, width - mLineWidth / 2 , height / 2, mBackgroundPaint);
-        canvas.drawLine(mStart + mLineWidth / 2, height / 2, mStop - mLineWidth / 2 , height / 2, mSliderPaint);
+        RectF rectF = new RectF();
+        rectF.left = paddingLeft;
+        rectF.top = 0;
+        rectF.bottom = height;
+        rectF.right = width - paddingRight;
+        canvas.saveLayer(rectF, null, Canvas.ALL_SAVE_FLAG);
+        //int saveCount = canvas.saveLayer(rectF, mSliderPaint);
+        canvas.drawLine(mLineWidth / 2 + paddingLeft, height / 2,
+                width - mLineWidth / 2 - paddingRight, height / 2, mBackgroundPaint);
+        mSliderPaint.setXfermode(mXfermode);
+        canvas.drawLine(mStart + paddingLeft + mLineWidth / 2, height / 2,
+                mStop - paddingRight - mLineWidth / 2 , height / 2, mSliderPaint);
+        mSliderPaint.setXfermode(null);
+        canvas.restore();
     }
 
     @Override
